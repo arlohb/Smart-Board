@@ -1,0 +1,101 @@
+:root {
+	--bg: #8D97FF;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-gap: 8px;
+	width: 100%;
+	height: 100%;
+}
+
+.grid-item {
+	background-color: var(--bg);
+}
+
+.calendar {
+	overflow-x: hidden;
+	overflow-y: scroll;
+	grid-column-start: 3;
+	grid-column-end: 4;
+	grid-row-start: 1;
+	grid-row-end: 4;
+}
+
+.calendar-event {
+	font-family: Arial;
+	background-color: var(--bg);
+	margin: 5px;
+}
+
+.calendar-day-container {
+	padding: 5px;
+	font-family: Arial;
+	background-color: #B9C0FF;
+	margin: 5px;
+}
+
+.widget-text {
+	margin: 10px;
+	font-size: 80px;
+}
+
+.temperature {
+	background-color: var(--bg);
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 1;
+	grid-row-end: 3;
+}
+
+
+.icon {
+	width: 120px;
+	height: 120px;
+	align-items: center;
+	display: block;
+	margin: auto;
+}
+.graphic {
+	align-items: center;
+	display: block;
+	margin: auto;
+	position: absolute;
+	
+}
+.graphic-label {
+	text-align: center;
+}
+.minutecast-dial {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+.title {
+	text-align: center;
+}
+.graphic-wrapper {
+	left: 30%;
+	top: 38%;
+	width: 50%;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.center-wrapper {
+	align-items: center;
+{
+
+
+
+
+h1 {
+	text-decoration: underline;
+	font-size: 50px;
+	font-family: Arial;
+	margin: 0px;
+	padding: 20px;
+}

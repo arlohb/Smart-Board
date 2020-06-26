@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<title>
+			Smart Home
+		</title>
+	</head>
+	<script src="node_modules/ical.js/build/ical.js"></script>
+	<script src="node_modules/moment/moment.js"></script>
+	<script src="clock.js"></script>
+	<script src="calendar.js"></script>
+	<script src="temperature.js"></script>
+	<script src="minutecast.js"></script>
+	<script>
+		function Start(){
+			GetCalendar();
+			loadTemperature();
+			loadCast();
+			UpdateClock();
+		}
+		window.onload = Start;
+	</script>
+	
+	<body>
+		<div class="grid-container">
+			<div class="grid-item">
+				<h1>Clock</h1>
+				<p class="widget-text" id="ClockText"></p>
+			</div>
+			<div class="grid-item">
+				<h1>Temperature</h1>
+				<p class="widget-text" id="temperature"></p>
+			</div>
+			<div class="grid-item">
+				4
+			</div>
+			<div class="grid-item" id="MinuteCast">
+				<h1>MinuteCast</h1>
+			</div>
+			<div class="grid-item">
+				7
+			</div>
+			<div class="grid-item calendar" id="Calendar">
+				<h1>Calendar</h1>
+			</div>
+		</div>
+	</body>
+</html>
