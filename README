@@ -1,6 +1,7 @@
 This is a smart board similar to DAK board, but free and open source.
 
-To use the calender, enter the ics url into 'config.txt'
+To use the calender, enter the ics url into 'icsUrl.txt'
+To use minutecast, go to the accuweather website for your location, select minutecast, and copy this address to the 'minutecastUrl.txt'
 
 To run this, you will need to run a server (I use apache), and place this project into the web folder.
 Then just connect to the server and it should just work.

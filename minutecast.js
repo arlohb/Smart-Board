@@ -10,8 +10,9 @@ function loadHTML(filePath) {
 }
 
 function loadCast(){
+	var url = loadFile("minutecastUrl.txt");
 	//get the text
-	var text = loadHTML("https://www.accuweather.com/en/gb/bredbury/sk6-2/minute-weather-forecast/324840");
+	var text = loadHTML(url);
 	
 	//get the images to load from the accuweather website not locally
 	text = text.split('src="/images/').join('src="https://www.accuweather.com/images/');
