@@ -1,5 +1,7 @@
 This is a smart board similar to DAK board, but free and open source.
 
+The temperature is got from serial input in the format temperature, humidity
+
 To use the calender, enter the ics url into 'icsUrl.txt'
 To use minutecast, go to the accuweather website for your location, select minutecast, and copy this address to the 'minutecastUrl.txt'
 
