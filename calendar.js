@@ -103,39 +103,44 @@ function RenderCalendar(data){
 	
 	//for each day in the grouped list
 	for(day=0; day<EventsGrouped.length-1; day++){
-		
+				
 		//get the events for that day
 		var dayEvents = EventsGrouped[day];
 		
-		//make div for the day
-		var dayDiv = "<div id=CalenderDay"+day.toString()+" class='calendar-day-container'></div>"
-		document.getElementById("Calendar").innerHTML += dayDiv + "<br>";
-		
-		//this will be all the events together
-		var output = "";
-		
-		//add the title for the day
-		output += "<h3>"+dayEvents[0].format("dddd Do MMMM")+"</h3>";
-		
-		//for each event of the day
-		for(event=1; event<dayEvents.length; event++){
+		//check if its today or after
+		if(dayEvents[0].isSameOrAfter(moment().startOf("day"))){
+			//make div for the day
+			var dayDiv = "<div id=CalenderDay"+day.toString()+" class='calendar-day-container'></div>"
+			document.getElementById("Calendar").innerHTML += dayDiv + "<br>";
 			
-			//get the event
-			var Event = dayEvents[event];
+			//this will be all the events together
+			var output = "";
 			
-			//create the element and add it to the output
-			var element = CreateCalendarDiv(Event);
-			output += element;
+			//add the title for the day
+			output += "<h3>"+dayEvents[0].format("dddd Do MMMM")+"</h3>";
 			
-			//if this is the last event of the day
-			if(event==dayEvents.length-1){
-				//add a new line
-				output += "<br>";
+			//for each event of the day
+			for(event=1; event<dayEvents.length; event++){
+				
+				//get the event
+				var Event = dayEvents[event];
+				
+				//create the element and add it to the output
+				var element = CreateCalendarDiv(Event);
+				output += element;
+				
+				//if this is the last event of the day
+				if(event==dayEvents.length-1){
+					//add a new line
+					output += "<br>";
+				}
 			}
+			
+			//apply the output to the day
+			document.getElementById("CalenderDay"+day.toString()).innerHTML = output;
 		}
 		
-		//apply the output to the day
-		document.getElementById("CalenderDay"+day.toString()).innerHTML = output;
+		
 	}
 }
 
