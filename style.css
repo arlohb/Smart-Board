@@ -1,5 +1,5 @@
 :root {
-	--bg: #8D97FF;
+	--bg: #8D97FF64;
 }
 
 .grid-container {
@@ -25,21 +25,24 @@
 }
 
 .calendar-event {
+	color: #FFFFFF;
 	font-family: Arial;
 	background-color: var(--bg);
 	margin: 5px;
 }
 
 .calendar-day-container {
+	color: #FFFFFF;
 	padding: 5px;
 	font-family: Arial;
-	background-color: #B9C0FF;
+	background-color: var(--bg);
 	margin: 5px;
 }
 
 .widget-text {
+	color: #FFFFFF;
 	margin: 10px;
-	font-size: 80px;
+	font-size: 60px;
 }
 
 .temperature {
@@ -87,15 +90,18 @@
 }
 .center-wrapper {
 	align-items: center;
-{
-
-
+}
 
 
 h1 {
+	color: #FFFFFF;
 	text-decoration: underline;
-	font-size: 50px;
+	font-size: 30px;
 	font-family: Arial;
 	margin: 0px;
-	padding: 20px;
+	padding: 10px;
+}
+
+body {
+	background-image: url("background.jpg")
 }
