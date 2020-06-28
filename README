@@ -5,7 +5,7 @@ The temperature is got from serial input in the format temperature, humidity
 To use the calender, enter the ics url into 'icsUrl.txt'
 To use minutecast, go to the accuweather website for your location, select minutecast, and copy this address to the 'minutecastUrl.txt'
 
-Background is set with 'background.jpg'
+'config.json' contains configurable things.
 
 Dependencies:
 	npm install ical.js

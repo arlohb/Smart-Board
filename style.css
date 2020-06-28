@@ -1,5 +1,12 @@
 :root {
 	--bg: #8D97FF64;
+	--font: #FF0000;
+	--bgimage: "background2.jpg";
+	font-family: Arial;
+	background-image: url("background2.jpg");
+	background-size: cover;
+	background-color: #FF0000A0;
+	background-blend-mode: darken;
 }
 
 .grid-container {
@@ -25,14 +32,14 @@
 }
 
 .calendar-event {
-	color: #FFFFFF;
+	color: var(--font);
 	font-family: Arial;
 	background-color: var(--bg);
 	margin: 5px;
 }
 
 .calendar-day-container {
-	color: #FFFFFF;
+	color: var(--font);
 	padding: 5px;
 	font-family: Arial;
 	background-color: var(--bg);
@@ -40,7 +47,7 @@
 }
 
 .widget-text {
-	color: #FFFFFF;
+	color: var(--font);
 	margin: 10px;
 	font-size: 60px;
 }
@@ -60,6 +67,9 @@
 	align-items: center;
 	display: block;
 	margin: auto;
+}
+.icon-phrase {
+	color: var(--font);
 }
 .graphic {
 	align-items: center;
@@ -94,14 +104,9 @@
 
 
 h1 {
-	color: #FFFFFF;
+	color: var(--font);
 	text-decoration: underline;
 	font-size: 30px;
-	font-family: Arial;
 	margin: 0px;
 	padding: 10px;
-}
-
-body {
-	background-image: url("background.jpg")
 }
