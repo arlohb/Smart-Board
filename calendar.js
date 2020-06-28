@@ -147,7 +147,7 @@ function RenderCalendar(data){
 
 //downloads the calender
 function GetCalendar(){
-	fetch(loadFile("icsUrl.txt"))
+	fetch(GetConfigParameters(["icsUrl"])[0])
 		.then(response => {
 			text=response.text();
 			return text

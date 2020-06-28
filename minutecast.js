@@ -10,7 +10,7 @@ function loadHTML(filePath) {
 }
 
 function loadCast(){
-	var url = loadFile("minutecastUrl.txt");
+	var url = GetConfigParameters(["minutecastUrl"])[0];
 	//get the text
 	var text = loadHTML(url);
 	

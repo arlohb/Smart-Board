@@ -2,5 +2,7 @@
 	"fontColour" : "#FFFFFF",
 	"widgetColour" : "#8D97FF32",
 	"backgroundImage" : "background.jpg",
-	"backgroundTint" : "#000000A0"
+	"backgroundTint" : "#000000A0",
+	"minutecastUrl" : "https://www.accuweather.com/en/gb/london/ec4a-2/minute-weather-forecast/328328",
+	"icsUrl" : "https://www.example.com/ICS"
 }
