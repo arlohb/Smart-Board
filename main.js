@@ -17,7 +17,7 @@ function GetConfig(){
 	var root = document.documentElement;
 	root.style.setProperty("--font", fontColour);
 	root.style.setProperty("--bg", widgetColour);
-	root.style.setProperty("background-image", backgroundImage);
+	root.style.setProperty("background-image", "url("+backgroundImage+")");
 	root.style.setProperty("background-color", backgroundTint);
 	
 }
