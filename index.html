@@ -14,37 +14,19 @@
 	<script src="minutecast.js"></script>
 	<script>
 		function Start(){
+			BuildUI();
 			GetConfig();
+			UpdateClock();
 			GetCalendar();
 			loadTemperature();
 			loadCast();
-			UpdateClock();
 		}
 		window.onload = Start;
 	</script>
 	
 	<body>
-		<div class="grid-container">
-			<div class="grid-item">
-				<h1>Clock</h1>
-				<p class="widget-text" id="ClockText"></p>
-			</div>
-			<div class="grid-item">
-				<h1>Temperature</h1>
-				<p class="widget-text" id="temperature"></p>
-			</div>
-			<div class="grid-item">
-				4
-			</div>
-			<div class="grid-item" id="MinuteCast">
-				<h1>MinuteCast</h1>
-			</div>
-			<div class="grid-item">
-				7
-			</div>
-			<div class="grid-item calendar" id="Calendar">
-				<h1>Calendar</h1>
-			</div>
+		<div class="grid-container" id="Main">
+			
 		</div>
 	</body>
 </html>

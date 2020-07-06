@@ -4,6 +4,15 @@ The temperature is got from serial input in the format temperature, humidity
 
 
 'config.json' contains configurable things.
+To configure the arrangement of the items, change the number values within 'modules',
+then underneath define the modules to be used with the values 0-9.
+The values in modules have to start from 0 and not miss out values, but don't have to go up to 9
+
+These are the available modules:
+	"Clock",
+	"SerialTemperature",
+	"Calendar",
+	"MinuteCast"
 
 Dependencies:
 	npm install ical.js
@@ -12,4 +21,4 @@ Dependencies:
 To run this, you will need to run a server (I use apache), and place this project into the web folder.
 Then just connect to the server and it should just work.
 
-WARNING: do not run this on a public server, as it requires no authentication so you're calender any other data will be accessible to anyone!
+WARNING: do not run this on a public server, as it requires no authentication so you're calendar any other data will be accessible to anyone!

@@ -1,8 +1,21 @@
 {
+	"modules" : [0,2,2,
+				 1,2,2,
+				 3,2,2],
+	"0": "Clock",
+	"1": "SerialTemperature",
+	"2": "Calendar",
+	"3": "MinuteCast",
+	"4": "",
+	"5": "",
+	"6": "",
+	"7": "",
+	"8": "",
+	"9": "",
 	"fontColour" : "#FFFFFF",
 	"widgetColour" : "#8D97FF32",
 	"backgroundImage" : "background.jpg",
 	"backgroundTint" : "#000000A0",
-	"minutecastUrl" : "https://www.accuweather.com/en/gb/london/ec4a-2/minute-weather-forecast/328328",
-	"icsUrl" : "https://www.example.com/ICS"
+	"minutecastUrl" : "",
+	"icsUrl" : ""
 }
