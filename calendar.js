@@ -5,6 +5,7 @@ function GetProperty(object, name){
 			return object.jCal[1][x][3];
 		}
 	}
+	return false;
 }
 
 //creates the calender event div element
@@ -15,7 +16,8 @@ function CreateCalendarDiv(e){
 		<p>
 			`+e[1]+`<br>
 			
-			<b>`+e[2].format("HH:mm")+`&nbsp-&nbsp`+e[3].format("HH:mm")+`</b></p>
+			<b>`+e[2].format("ddd MMM D")+`<br>
+			`+e[2].format("HH:mm")+`&nbsp-&nbsp`+e[3].format("HH:mm")+`</b></p>
 	</div>`
 }
 
@@ -28,6 +30,10 @@ function TimeToMoment(time){
 
 //renders the calender
 function RenderCalendar(data){
+	// for the events that last forever
+	var EventsRecur = [];
+	
+	
 	//parses the date
 	var calendar = ICAL.parse(data);
 	
@@ -53,6 +59,8 @@ function RenderCalendar(data){
 		//get the event from the list
 		var event = events[i];
 		
+		var rrule = GetProperty(event, "rrule");
+		
 		//get the title
 		var title = GetProperty(event, "summary");
 		//get the description, cutting out the join teams message
@@ -64,9 +72,31 @@ function RenderCalendar(data){
 		var end = GetProperty(event, "dtend");
 		end = TimeToMoment(end);
 		
-		//add this to the list
-		Events.push([title, desc, start, end]);
+		
+		if(rrule !== false){
+			EventsRecur.push([title, desc, start, end]);
+		}else{
+			//add this to the list
+			Events.push([title, desc, start, end]);
+		}
+		
+		
 	}
+	
+	for(e=0; e<EventsRecur.length; e++){
+		for(i=0; i<8; i++){
+			var unclonedEvent = EventsRecur[e];
+			var event = [unclonedEvent[0], unclonedEvent[1], moment(unclonedEvent[2]), moment(unclonedEvent[3])];
+			event[2].add(i, 'w');
+			event[3].add(i, 'w');
+			Events.push(event);
+			if(e==0){
+				console.log(event[2].format("Do"));
+			}
+		}
+	}
+	//Events = Events.sort((a, b) => a[2].diff(b[2]));
+	Events = Events.sort((a, b) => a[2].unix() - b[2].unix());
 	
 	// =================== GROUP THE EVENTS INTO DAYS ==================
 	
@@ -108,7 +138,7 @@ function RenderCalendar(data){
 		var dayEvents = EventsGrouped[day];
 		
 		//check if its today or after
-		if(dayEvents[0].isSameOrAfter(moment().startOf("day"))){
+		if(dayEvents[0].startOf("day").isSameOrAfter(moment().startOf("day"))){
 			//make div for the day
 			var dayDiv = "<div id=CalenderDay"+day.toString()+" class='calendar-day-container'></div>"
 			document.getElementById("Calendar").innerHTML += dayDiv + "<br>";
@@ -142,6 +172,8 @@ function RenderCalendar(data){
 		
 		
 	}
+	
+	console.log(EventsRecur);
 }
 
 
