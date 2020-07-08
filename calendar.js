@@ -90,9 +90,7 @@ function RenderCalendar(data){
 			event[2].add(i, 'w');
 			event[3].add(i, 'w');
 			Events.push(event);
-			if(e==0){
-				console.log(event[2].format("Do"));
-			}
+			
 		}
 	}
 	//Events = Events.sort((a, b) => a[2].diff(b[2]));
@@ -173,7 +171,6 @@ function RenderCalendar(data){
 		
 	}
 	
-	console.log(EventsRecur);
 }
 
 

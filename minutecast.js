@@ -34,6 +34,6 @@ function loadCast(){
 	document.getElementById("MinuteCast").class = cast.class
 	
 	
-	console.log("Updated");
+	
 	setTimeout(loadCast, 10000);
 }
